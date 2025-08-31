@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Core Colors */
+    --color-background: #FFFFFF; /* white */
+    --color-foreground: #0F172A; /* slate-900 */
+    --color-border: #E2E8F0; /* slate-200 */
+    --color-input: #F8FAFC; /* slate-50 */
+    --color-ring: #2563EB; /* blue-600 */
+    
+    /* Card Colors */
+    --color-card: #FFFFFF; /* white */
+    --color-card-foreground: #0F172A; /* slate-900 */
+    
+    /* Popover Colors */
+    --color-popover: #FFFFFF; /* white */
+    --color-popover-foreground: #0F172A; /* slate-900 */
+    
+    /* Muted Colors */
+    --color-muted: #F8FAFC; /* slate-50 */
+    --color-muted-foreground: #475569; /* slate-600 */
+    
+    /* Primary Colors */
+    --color-primary: #2563EB; /* blue-600 */
+    --color-primary-foreground: #FFFFFF; /* white */
+    
+    /* Secondary Colors */
+    --color-secondary: #64748B; /* slate-500 */
+    --color-secondary-foreground: #FFFFFF; /* white */
+    
+    /* Accent Colors */
+    --color-accent: #0EA5E9; /* sky-500 */
+    --color-accent-foreground: #FFFFFF; /* white */
+    
+    /* Success Colors */
+    --color-success: #059669; /* emerald-600 */
+    --color-success-foreground: #FFFFFF; /* white */
+    
+    /* Warning Colors */
+    --color-warning: #D97706; /* amber-600 */
+    --color-warning-foreground: #FFFFFF; /* white */
+    
+    /* Error/Destructive Colors */
+    --color-error: #DC2626; /* red-600 */
+    --color-error-foreground: #FFFFFF; /* white */
+    --color-destructive: #DC2626; /* red-600 */
+    --color-destructive-foreground: #FFFFFF; /* white */
+    
+    /* Surface Color */
+    --color-surface: #F8FAFC; /* slate-50 */
+    
+    /* Text Colors */
+    --color-text-primary: #0F172A; /* slate-900 */
+    --color-text-secondary: #475569; /* slate-600 */
+  }
+
+  .dark {
+    /* Core Colors - Dark Theme */
+    --color-background: #0F172A; /* slate-900 */
+    --color-foreground: #F8FAFC; /* slate-50 */
+    --color-border: #334155; /* slate-700 */
+    --color-input: #1E293B; /* slate-800 */
+    --color-ring: #3B82F6; /* blue-500 */
+    
+    /* Card Colors - Dark Theme */
+    --color-card: #1E293B; /* slate-800 */
+    --color-card-foreground: #F8FAFC; /* slate-50 */
+    
+    /* Popover Colors - Dark Theme */
+    --color-popover: #1E293B; /* slate-800 */
+    --color-popover-foreground: #F8FAFC; /* slate-50 */
+    
+    /* Muted Colors - Dark Theme */
+    --color-muted: #1E293B; /* slate-800 */
+    --color-muted-foreground: #94A3B8; /* slate-400 */
+    
+    /* Primary Colors - Dark Theme */
+    --color-primary: #3B82F6; /* blue-500 */
+    --color-primary-foreground: #FFFFFF; /* white */
+    
+    /* Secondary Colors - Dark Theme */
+    --color-secondary: #64748B; /* slate-500 */
+    --color-secondary-foreground: #F8FAFC; /* slate-50 */
+    
+    /* Accent Colors - Dark Theme */
+    --color-accent: #0EA5E9; /* sky-500 */
+    --color-accent-foreground: #FFFFFF; /* white */
+    
+    /* Success Colors - Dark Theme */
+    --color-success: #10B981; /* emerald-500 */
+    --color-success-foreground: #FFFFFF; /* white */
+    
+    /* Warning Colors - Dark Theme */
+    --color-warning: #F59E0B; /* amber-500 */
+    --color-warning-foreground: #FFFFFF; /* white */
+    
+    /* Error/Destructive Colors - Dark Theme */
+    --color-error: #EF4444; /* red-500 */
+    --color-error-foreground: #FFFFFF; /* white */
+    --color-destructive: #EF4444; /* red-500 */
+    --color-destructive-foreground: #FFFFFF; /* white */
+    
+    /* Surface Color - Dark Theme */
+    --color-surface: #1E293B; /* slate-800 */
+    
+    /* Text Colors - Dark Theme */
+    --color-text-primary: #F8FAFC; /* slate-50 */
+    --color-text-secondary: #94A3B8; /* slate-400 */
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+  }
+
+  code, pre {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer utilities {
+  .animate-shimmer {
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  .transition-micro {
+    transition: all 150ms ease-out;
+  }
+
+  .transition-smooth {
+    transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .transition-fade {
+    transition: opacity 120ms ease-in;
+  }
+}
